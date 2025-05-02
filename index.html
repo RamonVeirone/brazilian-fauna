@@ -24,5 +24,30 @@
     <footer>
         <p>Desenvolvido por <a href="https://github.com/RamonVeirone">Ramon Alves</a></p>
     </footer>
+    <script type="module">
+        import {createCarousel} from './js/carousel.js';
+
+        const aves = [
+            {name: "Arara-Azul", image: "arara.jpg", description: "Grande e exuberante, com penas azul-vibrantes e bico forte; vive em florestas e é símbolo da fauna brasileira."},
+            {name: "Tucano", image: "tucano.jpg", description: "Ave de médio porte, bico longo e colorido, corpo preto com detalhes vivos; vive em áreas tropicais."},
+            {name: "Beija-flor", image: "beija-flor.jpg", description: "Pequeno e ágil, com penas coloridas e voo rápido; alimenta-se do néctar das flores."}
+        ];
+
+        const mamiferos = [
+            {name: "Onça-pintada", image: "onca.jpg", description: "Grande felino de pelagem amarela com manchas negras; ágil, forte e símbolo da mata brasileira."},
+            {name: "Tamanduá-bandeira", image: "tamandua.jpg", description: " Animal de focinho comprido e língua longa; alimenta-se de formigas e tem andar característico."},
+            {name: "Capivara", image: "capivara.jpg", description: "Maior roedor do mundo, corpo robusto e pelagem marrom; vive em grupos perto da água."}
+        ];
+
+        const peixes = [
+            {name: "Piranha", image: "piranha.jpg", description: "Peixe carnívoro de água doce, com dentes afiados e comportamento agressivo em grupo."},
+            {name: "Tambaqui", image: "piranha.jpg", description: "Peixe grande e pacífico da Amazônia, de corpo robusto e muito valorizado na culinária."},
+            {name: "Peixe-boi", image: "peixe-boi.jpg", description: "Mamífero aquático de movimento lento, corpo arredondado e focinho achatado; vive em rios e águas costeiras."}
+        ];
+
+        document.querySelector('#aves').innerHTML += createCarousel(aves);
+        document.querySelector('#mamiferos').innerHTML += createCarousel(mamiferos);
+        document.querySelector('#peixes').innerHTML += createCarousel(peixes);
+    </script>
 </body>
 </html>
