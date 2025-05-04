@@ -1,59 +1,74 @@
 :root {
-    --light-blue: #AED9E0;
-    --soft-green: #B8E986;
-    --light-pink: #FFAEC9;
-    --pastel-yellow: #FAF884;
-    --soft-orange: #FFCBA4;
-  }
+  --light-blue: #AED9E0;
+  --soft-green: #B8E986;
+  --light-pink: #FFAEC9;
+  --pastel-yellow: #FAF884;
+  --soft-orange: #FFCBA4;
+}
 
-  body {
-    font-family: Arial, sans-serif;
-    background-color: var(--pastel-yellow);
-    margin: 0;
-    padding: 20px;
-  }
-  
-  header h1 {
-    color: var(--soft-orange);
-    text-align: center;
-  }
-  
-  section h2 {
-    color: var(--soft-orange);
-  }
-  
-  .animal-card {
-    width: 200px;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    margin: 10px;
-  }
-  
-  #aves .animal-card { background-color: var(--light-blue); }
-  #mamiferos .animal-card { background-color: var(--soft-green); }
-  #peixes .animal-card { background-color: var(--light-pink); }
-  
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--pastel-yellow);
+  margin: 0;
+  padding: 20px;
+}
+
+header h1 {
+  color: var(--soft-orange);
+  text-align: center;
+}
+
+section h2 {
+  color: var(--soft-orange);
+  text-align: center;
+}
+
+.animal-card {
+  width: 200px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+}
+
+#aves .animal-card { background-color: var(--light-blue); }
+#mamiferos .animal-card { background-color: var(--soft-green); }
+#peixes .animal-card { background-color: var(--light-pink); }
+
+.carousel {
+  position: relative;
+  width: 220px; /* Largura de um cartão + margens */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+button {
+  background-color: var(--soft-orange);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
   .carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+      width: 170px;
   }
-  
-  .carousel-inner {
-    display: flex;
-    overflow-x: auto;
+  .animal-card {
+      width: 150px;
   }
-  
   button {
-    background-color: var(--soft-orange);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
+      padding: 5px;
   }
-  
-  @media (max-width: 768px) {
-    .animal-card { width: 150px; }
-    button { padding: 5px; }
-  }
+}
