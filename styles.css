@@ -8,7 +8,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: var(--pastel-yellow);
+  background-color: var(--background-color);
+  color: var(--text-color);
   margin: 0;
   padding: 20px;
 }
@@ -20,7 +21,6 @@ header h1 {
 
 section h2 {
   color: var(--soft-orange);
-  text-align: center;
 }
 
 .animal-card {
@@ -29,22 +29,35 @@ section h2 {
   border-radius: 10px;
   text-align: center;
   margin: 10px;
+  background-color: var(--light-blue);
 }
 
-#aves .animal-card { background-color: var(--light-blue); }
-#mamiferos .animal-card { background-color: var(--soft-green); }
-#peixes .animal-card { background-color: var(--light-pink); }
+#mamiferos .animal-card {
+  background-color: var(--soft-green);
+}
+
+#peixes .animal-card {
+  background-color: var(--light-pink);
+}
 
 .carousel {
-  position: relative;
-  width: 220px; /* Largura de um cartão + margens */
-  margin: 0 auto;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .carousel-inner {
   display: flex;
-  transition: transform 0.5s ease;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  max-width: 100%;
+  padding: 10px 0;
+}
+
+.animal-card {
+  scroll-snap-align: start;
+  flex-shrink: 0;
 }
 
 button {
@@ -53,22 +66,13 @@ button {
   padding: 10px;
   cursor: pointer;
   border-radius: 5px;
-  margin: 5px;
-}
-
-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
 }
 
 @media (max-width: 768px) {
-  .carousel {
-      width: 170px;
-  }
   .animal-card {
-      width: 150px;
+    width: 150px;
   }
   button {
-      padding: 5px;
+    padding: 5px;
   }
 }
