@@ -7,6 +7,7 @@
   --background-color: #F0F4F8;
   --text-color: #333;
 }
+
 body {
   font-family: Arial, sans-serif;
   background-color: var(--background-color);
@@ -71,9 +72,9 @@ button {
 
 @media (max-width: 768px) {
   .animal-card {
-    width: 150px;
+      width: 150px;
   }
   button {
-    padding: 5px;
+      padding: 5px;
   }
 }
