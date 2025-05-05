@@ -49,6 +49,13 @@ section h2 {
   gap: 10px;
 }
 
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+}
+
 .carousel-inner {
   display: flex;
   overflow-x: auto;
@@ -57,9 +64,20 @@ section h2 {
   padding: 10px 0;
 }
 
+.carousel-inner {
+  display: flex;
+  transition: 0.5s ease;
+  width: 100%;
+}
+
 .animal-card {
   scroll-snap-align: start;
   flex-shrink: 0;
+}
+
+.animal-card {
+  min-width: 100%;
+  box-sizing: border-box;
 }
 
 button {
