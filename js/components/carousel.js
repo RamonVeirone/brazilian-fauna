@@ -14,28 +14,29 @@ export function createCarousel(animals) {
 }
 
 export function setupCarousel(carouselElement) {
-    const inner = carouselElement.querySelector('.carousel-inner');
-    const prevBtn = carouselElement.querySelector('.prev');
-    const nextBtn = carouselElement.querySelector('.next');
-    let currentIndex = 0;
+  const inner = carouselElement.querySelector('.carousel-inner');
+  const prevBtn = carouselElement.querySelector('.prev');
+  const nextBtn = carouselElement.querySelector('.next');
+  const slides = inner.querySelectorAll('.animal-card');
+  let currentIndex = 0;
 
-    prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            inner.scrollTo({
-                left: inner.children[currentIndex].offsetLeft,
-                behavior: 'smooth'
-            });
-        }
-    });
+  function updateCarousel() {
+      const slideWidth = slides[0].clientWidth;
+      inner.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  }
 
-    nextBtn.addEventListener('click', () => {
-        if (currentIndex < inner.children.length - 1) {
-            currentIndex++;
-            inner.scrollTo({
-                left: inner.children[currentIndex].offsetLeft,
-                behavior: 'smooth'
-            });
-        }
-    });
+  prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
+      }
+  });
+
+  nextBtn.addEventListener('click', () => {
+      if (currentIndex < slides.length - 1) {
+          currentIndex++;
+          updateCarousel();
+      }
+  });
+  updateCarousel();
 }
