@@ -90,10 +90,13 @@ button {
 
 @media (max-width: 768px) {
   .animal-card {
-      width: 150px;
+      width: 100%;
   }
   button {
       padding: 5px;
+  }
+  .carousel {
+    max-width: 100%;
   }
 }
 
