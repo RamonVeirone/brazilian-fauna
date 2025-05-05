@@ -16,22 +16,34 @@ body {
   padding: 20px;
 }
 
-header h1 {
+header h1,
+section h2 {
   color: var(--soft-orange);
   text-align: center;
 }
 
-section h2 {
-  color: var(--soft-orange);
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 300px; /* Largura máxima do carrossel */
+  margin: auto;
+  overflow: hidden; /* Esconde os cartões fora da área visível */
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease; /* Transição suave */
+  width: 100%;
 }
 
 .animal-card {
-  width: 200px;
+  min-width: 100%; /* Cada cartão ocupa 100% da largura do carrossel */
+  box-sizing: border-box;
   padding: 15px;
-  border-radius: 10px;
   text-align: center;
-  margin: 10px;
+  border-radius: 10px;
   background-color: var(--light-blue);
+  flex-shrink: 0; /* Impede que o cartão seja comprimido */
 }
 
 #mamiferos .animal-card {
@@ -42,42 +54,12 @@ section h2 {
   background-color: var(--light-pink);
 }
 
-.carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.carousel {
-  position: relative;
-  width: 100%;
-  max-width: 300px;
-  margin: auto;
-}
-
-.carousel-inner {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
+.animal-card img {
   max-width: 100%;
-  padding: 10px 0;
-}
-
-.carousel-inner {
-  display: flex;
-  transition: transform 0.5s ease;
-  width: 100%;
-}
-
-.animal-card {
-  scroll-snap-align: start;
-  flex-shrink: 0;
-}
-
-.animal-card {
-  min-width: 100%;
-  box-sizing: border-box;
+  height: auto; /* Mantém a proporção da imagem */
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
 }
 
 button {
@@ -86,30 +68,24 @@ button {
   padding: 10px;
   cursor: pointer;
   border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
 }
 
 @media (max-width: 768px) {
-  .animal-card {
-      width: 100%;
+  .carousel {
+    max-width: 100%; /* O carrossel ocupa toda a largura em telas menores */
   }
   button {
-      padding: 5px;
+    padding: 5px;
   }
-  .carousel {
-    max-width: 100%;
-  }
-}
-
-.animal-card img {
-  max-width: 100%;
-  height: 250px;  
-  display: block;  
-  margin: 0 auto;
-  border-radius: 10px;
-}
-
-.animal-card {
-  width: 300px; 
-  padding: 15px;
-  text-align: center;
 }
