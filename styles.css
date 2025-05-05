@@ -25,25 +25,25 @@ section h2 {
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 300px; /* Largura máxima do carrossel */
+  max-width: 300px; 
   margin: auto;
-  overflow: hidden; /* Esconde os cartões fora da área visível */
+  overflow: hidden; 
 }
 
 .carousel-inner {
   display: flex;
-  transition: transform 0.5s ease; /* Transição suave */
+  transition: transform 0.5s ease; 
   width: 100%;
 }
 
 .animal-card {
-  min-width: 100%; /* Cada cartão ocupa 100% da largura do carrossel */
+  min-width: 100%; 
   box-sizing: border-box;
   padding: 15px;
   text-align: center;
   border-radius: 10px;
   background-color: var(--light-blue);
-  flex-shrink: 0; /* Impede que o cartão seja comprimido */
+  flex-shrink: 0; 
 }
 
 #mamiferos .animal-card {
@@ -56,7 +56,7 @@ section h2 {
 
 .animal-card img {
   max-width: 100%;
-  height: auto; /* Mantém a proporção da imagem */
+  height: auto; 
   display: block;
   margin: 0 auto;
   border-radius: 10px;
@@ -83,7 +83,7 @@ button {
 
 @media (max-width: 768px) {
   .carousel {
-    max-width: 100%; /* O carrossel ocupa toda a largura em telas menores */
+    max-width: 100%; 
   }
   button {
     padding: 5px;
